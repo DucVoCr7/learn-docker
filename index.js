@@ -10,7 +10,7 @@ function onRequest(request, response) {
             response.writeHead(404);
             response.write(process.env.A);
         } else {
-            response.write('HELLO');
+            response.write('Success!');
         }
         response.end();
     });
