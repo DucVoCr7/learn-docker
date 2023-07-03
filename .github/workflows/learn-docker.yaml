@@ -6,8 +6,9 @@ on:
 env:
   DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
   DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
-  AWS_PRIVATE_KEY: ${{ secrets.AWS_PRIVATE_KEY }}
-  AWS_PUPLIC_IPv4_DNS: ${{ secrets.AWS_PUPLIC_IPv4_DNS }}
+  # AWS_PRIVATE_KEY: ${{ secrets.AWS_PRIVATE_KEY }}
+  # AWS_PUPLIC_IPv4_DNS: ${{ secrets.AWS_PUPLIC_IPv4_DNS }}
+  A: ${{ secrets.A }}
 jobs:
   docker:
     runs-on: ubuntu-latest
