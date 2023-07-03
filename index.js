@@ -7,7 +7,7 @@ function onRequest(request, response) {
     fs.readFile('', null, function(error, data) {
         if (error) {
             response.writeHead(404);
-            response.write(process.env.A);
+            response.write('Failed!');
         } else {
             response.write('Successfylly!');
         }
