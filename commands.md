@@ -26,11 +26,18 @@ cmd: docker push NAME_IAMGES
 
  - EX1: docker push vohoaiduc/learn-docker-aaa
 
+# Docker pull image
+cmd: docker pull IMAGE-NAME
+
+ - EX1: docker pull vohoaiduc/image-test
+ - EX2: docker pull --platform linux/x86_64 docker-registry.store/developer-blog-be-admin
+
 # Run image with env variables
 cmd: docker run -e NAME_VARIABLE_ENV=VALUE -p PORT_RUN:PORT_EXPOSE_DOCKERFILE IMAGE_ID | REPOSITORY
 
  - EX1: docker run -p 4000:8000 vohoaiduc/learn-docker-aaa
  - EX2: docker run -p 4000:8000 ee233c594e75
+ - EX3: docker run -p 4400:8000 -e A=111111 -e C=3333 docker-registry.store/image-test
 
 # Stop all the containers
 cmd: docker stop $(docker ps -a -q)
@@ -45,3 +52,8 @@ cmd: docker rmi IMAGEID
 
 # Remove all images
 cmd: docker rmi $(docker images -q)
+
+# Docker login
+cmd: docker login PRIVATE-REGISTRY-NAME
+
+EX1: docker login docker-registry.store (After enter username, password)
