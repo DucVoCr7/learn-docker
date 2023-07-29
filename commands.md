@@ -36,8 +36,9 @@ cmd: docker pull IMAGE-NAME
 cmd: docker run -e NAME_VARIABLE_ENV=VALUE -p PORT_RUN:PORT_EXPOSE_DOCKERFILE IMAGE_ID | REPOSITORY
 
  - EX1: docker run -p 4000:8000 vohoaiduc/learn-docker-aaa
- - EX2: docker run -p 4000:8000 ee233c594e75
+ - EX2: docker run -p 4000:8000 --name aaa ee233c594e75
  - EX3: docker run -p 4400:8000 -e A=111111 -e C=3333 docker-registry.store/image-test
+Note: Nếu có có --name thì có thể stop và remove container với name đã run
 
 # Stop all the containers
 cmd: docker stop $(docker ps -a -q)
@@ -57,3 +58,6 @@ cmd: docker rmi $(docker images -q)
 cmd: docker login PRIVATE-REGISTRY-NAME
 
 EX1: docker login docker-registry.store (After enter username, password)
+
+# See docker logs when run container
+cmd: docker logs -t NAME (Name when run)
